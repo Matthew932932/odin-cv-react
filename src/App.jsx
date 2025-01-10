@@ -15,7 +15,7 @@ function App() {
   //   phone: "phone number",
   // });
 
-  const [edu, setEdu] = useState([]);
+  //const [edu, setEdu] = useState([]);  xxxxxxxxxxxxxxxxxxxxxxxxxxx
   
 
   // const handleName = (e) => {
@@ -44,10 +44,11 @@ function App() {
       <h2>Gen Info 2</h2>
       <GenInfo2 />  
       <h2>Edu</h2>
-      <Edu
+      {/* <Edu        xxxxxxxxxxxxxxxxxxxxxxxxxxx
         edu={edu}
         setEdu={setEdu}
-      />
+      /> */}
+      <Edu />
 
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>

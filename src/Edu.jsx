@@ -1,12 +1,26 @@
-function Edu({edu,setEdu}) {
+import { useState } from "react";
+
+
+
+function Edu() {
 	
+	const [edu, setEdu] = useState([]);
+
 	const listEdu = edu.map(item =>
 		<li key = {item.id}>
 		<form className = "edu-form">
 			<label>
-        	Organization Name:
+        	University:
             <input 
-            type="text" name="name"
+            type="text" name="uni"
+        		onChange={(e) => handleOnChange(e, item.id)}
+				
+            />
+      </label>
+			<label>
+        	Course:
+            <input 
+            type="text" name="course"
         		onChange={(e) => handleOnChange(e, item.id)}
 				
             />
@@ -17,7 +31,7 @@ function Edu({edu,setEdu}) {
 	)
 
 	function handleOnChange(e, itemId) {
-		//e.preventDefault();      ???????needed
+		
 		const newEdu = [...edu];
 		const index = newEdu.findIndex(item=>item.id === itemId);
 		newEdu[index] = {...newEdu[index], [e.target.name]: e.target.value};
@@ -32,6 +46,8 @@ function Edu({edu,setEdu}) {
 				{id: crypto.randomUUID()}
 		]);
 	}
+
+	console.log(edu)
 
 	return (
 		<>
